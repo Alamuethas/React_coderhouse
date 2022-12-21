@@ -12,10 +12,10 @@ const NavBar = () => {
                 </li>
                 <ul className="navegacion__div__contenedor">
                     <li>
-                        <NavLink to={"Componentes"}>accion</NavLink>
+                        <NavLink to={"Componentes"}>Componentes</NavLink>
                     </li>
                     <li>
-                        <NavLink to={"Computadoras"}>rpg</NavLink>
+                        <NavLink to={"Computadoras"}>Computadoras</NavLink>
                     </li>
                     <li>
                         <NavLink to={"Perifericos"}>Perifericos</NavLink>
