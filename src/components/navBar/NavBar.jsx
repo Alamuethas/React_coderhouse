@@ -1,20 +1,29 @@
-
+import React from "react";
 import "./NavBar.css"
-import CartWidget from "../CartWidget/CartWidget";
+import Carrito from "../CartWidget/CartWidget";
+import { NavLink } from "react-router-dom";
 
 const NavBar = () => {
     return (
-        <div className="navbar-container">
-            <div className="container-logo">
-                <img className="logo-navbar" src="https://res.cloudinary.com/dk3okovox/image/upload/v1669479141/Media/computer-png_pbzpx1.png" alt="" />
+        <nav className="navegacion">
+            <div className="navegacion__div">
+                <li>
+                    <NavLink to={"home"}></NavLink>
+                </li>
+                <ul className="navegacion__div__contenedor">
+                    <li>
+                        <NavLink to={"Componentes"}>accion</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to={"Computadoras"}>rpg</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to={"Perifericos"}>Perifericos</NavLink>
+                    </li>
+                    <Carrito></Carrito>
+                </ul>
             </div>
-            <ul className="navbar">
-                <li className="navbar-item">componentes</li>
-                <li className="navbar-item">computadoras</li>
-                <li className="navbar-item">perifericos</li>
-            </ul>
-            <CartWidget />
-        </div>
+        </nav>
     )
 }
 

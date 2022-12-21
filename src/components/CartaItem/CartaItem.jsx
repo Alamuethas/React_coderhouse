@@ -1,24 +1,31 @@
 import React from 'react';
+import { useContext } from 'react';
+import { Button } from "react-bootstrap";
+import { Card } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import { ItemContext } from '../Contexto/ItemContext';
 
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
 
-
-const CartaItem = () => {
+const CartaItem = (props) => {
+    const { img, titulo, id, descrpicion } = props;
+    const { setItem } = useContext(ItemContext);
+    console.log(id);
     return (
-        <Card style={{ width: '18rem' }}>
-            <Card.Img variant="top" src="holder.js/100px180" />
-            <Card.Body>
-                <Card.Title>Card Title</Card.Title>
-                <Card.Text>
-                    Some quick example text to build on the card title and make up the
-                    bulk of the card's content.
-                </Card.Text>
-                <Button variant="primary">Go somewhere</Button>
+        <Card bg={"light"} style={{ width: "18rem" }} text="dark">
+            <Card.Img variant="top" src={img} />
+            <Card.Body bg={"light"}>
+                <Card.Title>{titulo}</Card.Title>
+                <Card.Text>{descrpicion}</Card.Text>
+                <Link to={id}>
+                    <Button variant="dark" onClick={setItem(id)}>
+                        Mas info
+                    </Button>
+                </Link>
             </Card.Body>
         </Card>
     );
-}
+};
+
 
 
 export default CartaItem;
